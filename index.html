@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab Aesthetic — kozmetički studio u Novom Sadu | Laserska epilacija, kedrova bačva, manikir</title>
+<meta name="description" content="Lab Aesthetic — kozmetički studio u Novom Sadu, Kralja Aleksandra 14. Laserska epilacija, nega lica, kedrova bačva, manikir i pedikir, laminacija obrva. Zakazivanje telefonom ili WhatsApp-om.">
+<meta property="og:title" content="Lab Aesthetic — kozmetički studio, Novi Sad">
+<meta property="og:description" content="Nega koja se vidi. I oseća. Laserska epilacija, nega lica, kedrova bačva i manikir u centru Novog Sada.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photos/hero.jpg">
+<meta name="theme-color" content="#17110E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6F1; --paper-2:#F2EAE0; --ink:#17110E; --ink-2:#3B302A; --ink-soft:#6B5D54;
+  --accent:#B06A4E; --accent-d:#8E5138; --accent-soft:#EBD8CB; --gold:#C9A227;
+  --line:rgba(23,17,14,.12); --line-2:rgba(23,17,14,.06);
+  --radius:22px; --shadow:0 24px 60px -30px rgba(23,17,14,.35);
+  --serif:'Playfair Display',Georgia,serif; --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.serif{font-family:var(--serif)}
+.accent{color:var(--accent)}
+/* noise */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.022;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:256px 256px}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .4s ease, box-shadow .4s ease, padding .4s ease;padding:18px 0}
+header.solid{background:rgba(250,246,241,.86);backdrop-filter:blur(18px) saturate(140%);box-shadow:0 1px 0 var(--line);padding:10px 0}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:1.36rem;letter-spacing:.16em;font-weight:500;text-transform:uppercase}
+.logo .mark{width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:.78rem;letter-spacing:.02em;flex:none;font-family:var(--serif)}
+.logo b{font-weight:500}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font-size:.83rem;letter-spacing:.09em;text-transform:uppercase;font-weight:500;color:var(--ink-2);position:relative;padding:4px 0}
+nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+nav a:hover::after{width:100%}
+.hd-right{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid var(--line);border-radius:100px;overflow:hidden}
+.lang button{padding:6px 11px;font-size:.72rem;letter-spacing:.1em;font-weight:700;color:var(--ink-soft);transition:.25s}
+.lang button.on{background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:100px;font-size:.88rem;font-weight:600;letter-spacing:.02em;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,background .3s;white-space:nowrap}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:0 14px 30px -18px rgba(23,17,14,.9)}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 20px 40px -18px rgba(23,17,14,.8)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-d);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-sm{padding:10px 20px;font-size:.8rem}
+.mob-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;place-items:center}
+.mob-toggle span{display:block;width:17px;height:1.5px;background:var(--ink);position:relative}
+.mob-toggle span::before,.mob-toggle span::after{content:'';position:absolute;left:0;width:17px;height:1.5px;background:var(--ink)}
+.mob-toggle span::before{top:-5px}.mob-toggle span::after{top:5px}
+/* hero */
+.hero{position:relative;padding:150px 0 70px;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
+.blob-1{width:520px;height:520px;background:#EBD3C2;top:-140px;left:-160px;animation:float 22s ease-in-out infinite}
+.blob-2{width:420px;height:420px;background:#E4D9C3;bottom:-120px;right:-90px;animation:float 26s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-25px) scale(1.08)}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--accent-d);margin-bottom:26px}
+.eyebrow::before{content:'';width:34px;height:1px;background:var(--accent)}
+h1{font-family:var(--serif);font-size:clamp(2.6rem,5.4vw,4.5rem);line-height:1.02;font-weight:500;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--accent)}
+.hero p.lead{margin-top:26px;font-size:1.06rem;color:var(--ink-2);max-width:480px;font-weight:300}
+.hero-acts{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.trust{display:flex;gap:24px;margin-top:44px;flex-wrap:nowrap;align-items:center}
+.trust div{display:flex;flex-direction:column;font-size:.8rem;color:var(--ink-soft)}
+.trust div+div{padding-left:24px;border-left:1px solid var(--line)}
+.trust b{font-family:var(--serif);font-size:1.24rem;color:var(--ink);font-weight:500;letter-spacing:.01em}
+.trust .sep{width:1px;height:34px;background:var(--line)}
+.hero-visual{position:relative}
+.arch{position:relative;border-radius:280px 280px 26px 26px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/4.7}
+.arch img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.02)}
+.arch::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,17,14,.02),rgba(23,17,14,.18))}
+.badge-card{position:absolute;left:-26px;bottom:34px;background:rgba(250,246,241,.94);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:16px 20px;box-shadow:0 20px 40px -24px rgba(23,17,14,.5);animation:rise 1s cubic-bezier(.16,1,.3,1) .3s both}
+.badge-card .stars{color:var(--gold);font-size:.85rem;letter-spacing:.12em}
+.badge-card b{display:block;font-family:var(--serif);font-size:1.1rem;margin:2px 0}
+.badge-card small{font-size:.72rem;color:var(--ink-soft);letter-spacing:.04em}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+/* ticker */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);overflow:hidden;padding:16px 0}
+.ticker-track{display:flex;gap:52px;white-space:nowrap;animation:slide 38s linear infinite;width:max-content}
+.ticker span{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;display:flex;align-items:center;gap:52px}
+.ticker span::after{content:'✦';color:var(--accent);font-size:.7rem}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* sections */
+section{padding:104px 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:54px;flex-wrap:wrap}
+.sec-label{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--accent-d);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--accent)}
+h2{font-family:var(--serif);font-size:clamp(2rem,3.6vw,3.05rem);line-height:1.08;font-weight:500;letter-spacing:-.015em}
+h2 em{font-style:italic;color:var(--accent)}
+.sec-head p{max-width:400px;color:var(--ink-soft);font-size:.95rem;font-weight:300}
+/* services */
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.srv{background:#fff;border:1px solid var(--line-2);border-radius:var(--radius);padding:28px 24px 26px;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s,border-color .45s;min-height:236px;display:flex;flex-direction:column}
+.srv:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(23,17,14,.4);border-color:var(--accent-soft)}
+.srv .num{font-family:var(--serif);font-size:.8rem;color:var(--accent);letter-spacing:.1em}
+.srv h3{font-family:var(--serif);font-size:1.24rem;font-weight:500;margin:14px 0 10px;line-height:1.22}
+.srv p{font-size:.86rem;color:var(--ink-soft);font-weight:300;line-height:1.6;flex:1}
+.srv .tag{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:12px;width:100%}
+.srv .tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
+/* ritual dark */
+.ritual{background:var(--ink);color:#F6EFE7;padding:0}
+.ritual-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.ritual-img{position:relative;min-height:620px}
+.ritual-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05) brightness(.9)}
+.ritual-body{padding:96px 72px}
+.ritual .sec-label{color:#D9A88C}
+.ritual .sec-label::before{background:#D9A88C}
+.ritual h2{color:#F8F2EA}
+.ritual h2 em{color:#D9A88C}
+.ritual p.intro{color:rgba(246,239,231,.72);font-weight:300;margin-top:22px;max-width:460px}
+.rit-list{margin-top:38px;display:flex;flex-direction:column;gap:0}
+.rit-item{display:flex;gap:18px;padding:20px 0;border-top:1px solid rgba(246,239,231,.14)}
+.rit-item:last-child{border-bottom:1px solid rgba(246,239,231,.14)}
+.rit-item .k{font-family:var(--serif);font-size:.82rem;color:#D9A88C;min-width:28px;padding-top:3px}
+.rit-item h4{font-size:.98rem;font-weight:600;letter-spacing:.01em;margin-bottom:5px}
+.rit-item p{font-size:.85rem;color:rgba(246,239,231,.66);font-weight:300;line-height:1.55}
+.ritual .btn{margin-top:36px;background:#F6EFE7;color:var(--ink)}
+.ritual .btn:hover{background:#fff;transform:translateY(-2px)}
+/* offers */
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.offer{border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;background:linear-gradient(160deg,#fff, #FBF5EE);position:relative;overflow:hidden;transition:transform .4s,box-shadow .4s}
+.offer:hover{transform:translateY(-5px);box-shadow:0 26px 50px -34px rgba(23,17,14,.45)}
+.offer .pill{display:inline-block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent-d);background:var(--accent-soft);padding:5px 12px;border-radius:100px;margin-bottom:18px}
+.offer h3{font-family:var(--serif);font-size:1.42rem;font-weight:500;margin-bottom:12px;line-height:1.2}
+.offer p{font-size:.9rem;color:var(--ink-soft);font-weight:300}
+.offer .big{position:absolute;right:20px;top:16px;font-family:var(--serif);font-size:2.6rem;color:rgba(176,106,78,.22);line-height:1}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(200px,22vw,300px);gap:14px}
+.gal{position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;min-height:100%}
+.gal:first-child{grid-column:span 2;grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.16,1,.3,1),filter .6s}
+.gal:hover img{transform:scale(1.06);filter:saturate(1.05)}
+.gal::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(23,17,14,.62));opacity:.85;transition:opacity .4s}
+.gal:hover::after{opacity:.95}
+.gal span{position:absolute;left:20px;bottom:18px;z-index:2;color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600}
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border:1px solid var(--line-2);border-radius:var(--radius);padding:32px 30px;display:flex;flex-direction:column;gap:16px}
+.rev .stars{color:var(--gold);letter-spacing:.14em;font-size:.84rem}
+.rev p{font-family:var(--serif);font-size:1.06rem;line-height:1.55;color:var(--ink-2);font-style:italic}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line-2)}
+.rev .av{width:38px;height:38px;border-radius:50%;background:var(--accent-soft);color:var(--accent-d);display:grid;place-items:center;font-family:var(--serif);font-size:.95rem}
+.rev .who b{display:block;font-size:.86rem;font-weight:600}
+.rev .who small{font-size:.72rem;color:var(--ink-soft);letter-spacing:.04em}
+.rev-score{background:var(--ink);color:#F6EFE7;border:none;justify-content:center;align-items:flex-start}
+.rev-score .big{font-family:var(--serif);font-size:3.6rem;line-height:1;color:#F8F2EA}
+.rev-score .out{font-size:.82rem;color:rgba(246,239,231,.6);letter-spacing:.06em}
+.rev-score p{color:rgba(246,239,231,.7);font-style:normal;font-size:.88rem;font-family:var(--sans);font-weight:300}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;text-align:left;font-size:1rem;font-weight:500;letter-spacing:.005em}
+.faq-q .ico{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:.35s;font-size:1rem;color:var(--accent-d)}
+.faq-item.open .faq-q .ico{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1),opacity .35s;opacity:0}
+.faq-item.open .faq-a{opacity:1}
+.faq-a p{padding:0 46px 24px 0;font-size:.92rem;color:var(--ink-soft);font-weight:300}
+/* booking */
+.booking{background:var(--paper-2)}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.book-aside p{color:var(--ink-soft);font-weight:300;margin-top:20px;max-width:400px}
+.quick{display:flex;flex-direction:column;gap:12px;margin-top:34px}
+.quick a{display:flex;align-items:center;gap:14px;padding:15px 18px;background:rgba(255,255,255,.7);border:1px solid var(--line-2);border-radius:14px;font-size:.9rem;transition:.3s}
+.quick a:hover{background:#fff;transform:translateX(4px);border-color:var(--accent-soft)}
+.quick a i{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-style:normal;font-size:.85rem;flex:none}
+.quick a b{display:block;font-size:.9rem;font-weight:600}
+.quick a small{font-size:.75rem;color:var(--ink-soft)}
+form{background:#fff;border:1px solid var(--line-2);border-radius:26px;padding:38px;box-shadow:0 30px 60px -46px rgba(23,17,14,.5)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label{font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
+.field input,.field select,.field textarea{font-family:inherit;font-size:.94rem;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);transition:.25s;width:100%}
+.field textarea{resize:vertical;min-height:88px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 4px rgba(176,106,78,.1)}
+.field .err{font-size:.72rem;color:#B4372F;display:none}
+.field.invalid input,.field.invalid select{border-color:#B4372F}
+.field.invalid .err{display:block}
+form .btn{width:100%;margin-top:8px}
+form small.note{display:block;margin-top:14px;font-size:.72rem;color:var(--ink-soft);text-align:center;line-height:1.5}
+.success{display:none;text-align:center;padding:26px 10px}
+.success.show{display:block}
+.success .ok{width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent-d);display:grid;place-items:center;font-size:1.7rem;margin:0 auto 18px}
+.success h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;margin-bottom:10px}
+.success p{color:var(--ink-soft);font-size:.92rem;font-weight:300;max-width:340px;margin:0 auto}
+/* contact */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.ct-list>div{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+.ct-list>div:last-child{border:none}
+.ct-list i{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:.9rem;flex:none;color:var(--accent-d)}
+.ct-list b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px;font-weight:700}
+.ct-list .v{font-size:.98rem}
+.ct-list .v small{display:block;font-size:.76rem;color:var(--ink-soft);font-weight:300}
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);height:420px}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.25) contrast(1.03)}
+/* footer */
+footer{background:var(--ink);color:rgba(246,239,231,.7);padding:64px 0 34px}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(246,239,231,.13)}
+footer .logo{color:#F8F2EA;font-size:1.3rem}
+footer .logo .mark{background:#F8F2EA;color:var(--ink)}
+footer h5{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#F8F2EA;margin-bottom:16px;font-weight:700}
+footer a{font-size:.9rem;color:rgba(246,239,231,.7);transition:.25s;display:block;padding:4px 0}
+footer a:hover{color:#D9A88C}
+.ft-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:.76rem;letter-spacing:.03em}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:40px;height:40px;border:1px solid rgba(246,239,231,.2);border-radius:50%;display:grid;place-items:center;font-size:.75rem;padding:0}
+.socials a:hover{background:#F8F2EA;color:var(--ink);border-color:#F8F2EA}
+/* floating */
+.fab{position:fixed;right:24px;bottom:24px;z-index:990;display:flex;flex-direction:column;gap:10px;align-items:flex-end;opacity:0;transform:translateY(18px);pointer-events:none;transition:.5s cubic-bezier(.16,1,.3,1)}
+.fab.show{opacity:1;transform:none;pointer-events:all}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(23,17,14,.6);color:#fff;font-size:1.15rem}
+.fab .wa{background:#25D366}
+.fab .tg{background:var(--ink);font-size:.9rem;letter-spacing:.02em}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:none}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(15,11,9,.94);z-index:2000;display:none;place-items:center;padding:40px}
+.lb.on{display:grid}
+.lb img{max-width:92vw;max-height:88vh;border-radius:14px;object-fit:contain}
+.lb button{position:absolute;top:24px;right:28px;color:#fff;font-size:2rem;line-height:1}
+@media(max-width:1080px){
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{gap:40px}
+  .ritual-body{padding:70px 44px}
+}
+@media(max-width:900px){
+  nav{position:fixed;inset:0 0 auto 0;top:0;height:100vh;background:rgba(250,246,241,.98);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.16,1,.3,1);z-index:1100}
+  nav.open{transform:none}
+  nav a{font-size:1.1rem}
+  .mob-toggle{display:grid;order:3;z-index:1200}
+  .hd-right .btn{display:none}
+  .hero{padding:120px 0 50px}
+  .trust{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:34px}
+  .trust div+div{padding-left:0;border-left:none}
+  .hero-grid,.faq-grid,.book-grid,.ct-grid,.ritual-grid{grid-template-columns:1fr}
+  .arch{aspect-ratio:1/1.05}
+  .badge-card{left:12px;bottom:12px}
+  .ritual-img{min-height:360px}
+  .offer-grid,.rev-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
+  .gal:first-child{grid-column:span 2;grid-row:span 1}
+  section{padding:70px 0}
+  .wrap{padding:0 20px}
+  form{padding:26px 20px}
+  .f-row{grid-template-columns:1fr}
+  .map{height:320px}
+  .ft-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:560px){
+  .srv-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .gal:first-child{grid-column:span 2}
+  .hero-acts .btn{width:100%}
+  .logo{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap hd">
+    <a href="#top" class="logo"><span class="mark">LA</span> <b>Lab&nbsp;Aesthetic</b></a>
+    <nav id="nav">
+      <a href="#usluge" data-i18n="nav_services">Usluge</a>
+      <a href="#ritual" data-i18n="nav_ritual">Kedrova bačva</a>
+      <a href="#pogodnosti" data-i18n="nav_offers">Pogodnosti</a>
+      <a href="#galerija" data-i18n="nav_gallery">Galerija</a>
+      <a href="#faq" data-i18n="nav_faq">Pitanja</a>
+      <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <div class="hd-right">
+      <div class="lang">
+        <button id="btn-sr" class="on" onclick="setLang('sr')">SR</button>
+        <button id="btn-ru" onclick="setLang('ru')">RU</button>
+      </div>
+      <a href="#zakazivanje" class="btn btn-dark btn-sm" data-i18n="nav_book">Zakaži termin</a>
+      <button class="mob-toggle" onclick="toggleNav()" aria-label="Meni"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="blob blob-1"></div><div class="blob blob-2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="hero_eyebrow">Kozmetički studio · Novi Sad</div>
+      <h1 data-i18n-html="hero_h1">Nega koja se <em>vidi.</em><br>I oseća.</h1>
+      <p class="lead" data-i18n="hero_lead">Laserska epilacija, nega lica, kedrova bačva i manikir — u mirnom studiju u centru Novog Sada. Bez žurbe, po meri tvoje kože.</p>
+      <div class="hero-acts">
+        <a href="#zakazivanje" class="btn btn-dark" data-i18n="hero_cta">Zakaži termin</a>
+        <a href="#usluge" class="btn btn-ghost" data-i18n="hero_cta2">Pogledaj usluge</a>
+      </div>
+      <div class="trust">
+        <div><b>4,9 ★</b><span data-i18n="trust_rev">28 recenzija na Google-u</span></div>
+        <div><b data-i18n="trust_addr">Kralja Aleksandra 14</b><span data-i18n="trust_addr2">Novi Sad, Grbavica</span></div>
+        <div><b>SR / RU</b><span data-i18n="trust_lang">Razgovor bez prevoda</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="arch"><img src="photos/brow.jpg" alt="Tretman lica u studiju Lab Aesthetic, Novi Sad" fetchpriority="high"></div>
+      <div class="badge-card">
+        <div class="stars">★★★★★</div>
+        <b>4,9 / 5</b>
+        <small data-i18n="badge_small">Ocena klijentkinja na Google-u</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span data-i18n="tk1">Laserska epilacija</span><span data-i18n="tk2">Kedrova bačva</span><span data-i18n="tk3">Nega lica</span><span data-i18n="tk4">Manikir i pedikir</span><span data-i18n="tk5">Laminacija obrva</span><span data-i18n="tk6">Masaže</span>
+    <span data-i18n="tk1">Laserska epilacija</span><span data-i18n="tk2">Kedrova bačva</span><span data-i18n="tk3">Nega lica</span><span data-i18n="tk4">Manikir i pedikir</span><span data-i18n="tk5">Laminacija obrva</span><span data-i18n="tk6">Masaže</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="usluge">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-label rv" data-i18n="srv_label">Usluge</div>
+        <h2 class="rv" data-i18n-html="srv_h2">Sve na jednom mestu —<br><em>od lasera do kedrovine</em></h2>
+      </div>
+      <p class="rv" data-i18n="srv_intro">Osam oblasti nege, jedan tim i jedan pristup: prvo procena, pa tretman. Cene i trajanje potvrđujemo pri zakazivanju — bez iznenađenja na kasi.</p>
+    </div>
+    <div class="srv-grid">
+      <article class="srv rv"><div class="num">01</div><h3 data-i18n="s1_t">Laserska epilacija</h3><p data-i18n="s1_d">Diodni laser sa hlađenjem: lice, pazuhe, bikini, noge, leđa. Precizno i mirno, bez iritacije.</p><div class="tag" data-i18n="s1_g">15–60 min</div></article>
+      <article class="srv rv"><div class="num">02</div><h3 data-i18n="s2_t">Nega i čišćenje lica</h3><p data-i18n="s2_d">Hidrodermabrazija, dubinsko čišćenje, mezoterapija i maske — plan nege za tvoj tip kože.</p><div class="tag" data-i18n="s2_g">45–75 min</div></article>
+      <article class="srv rv"><div class="num">03</div><h3 data-i18n="s3_t">Kedrova bačva</h3><p data-i18n="s3_d">Fitoterapija u kedrovom buretu: toplota, biljna isparenja i pola sata tišine samo za tebe.</p><div class="tag" data-i18n="s3_g">30–40 min</div></article>
+      <article class="srv rv"><div class="num">04</div><h3 data-i18n="s4_t">Manikir i pedikir</h3><p data-i18n="s4_d">Gel lak, nadogradnja, spa pedikir i nega zanoktica. Uredno, čisto i dugotrajno.</p><div class="tag" data-i18n="s4_g">60–90 min</div></article>
+      <article class="srv rv"><div class="num">05</div><h3 data-i18n="s5_t">Obrve i trepavice</h3><p data-i18n="s5_d">Laminacija, lash lift, korekcija i bojenje — prirodan izgled koji se ipak primeti.</p><div class="tag" data-i18n="s5_g">45–60 min</div></article>
+      <article class="srv rv"><div class="num">06</div><h3 data-i18n="s6_t">Depilacija šećerom</h3><p data-i18n="s6_d">Šećerna pasta za osetljivu kožu — bez voska, bez pečenja i bez crvenila.</p><div class="tag" data-i18n="s6_g">20–45 min</div></article>
+      <article class="srv rv"><div class="num">07</div><h3 data-i18n="s7_t">Masaže i anticelulit</h3><p data-i18n="s7_d">Limfna drenaža, anticelulit program i masaža leđa posle dugog dana pred ekranom.</p><div class="tag" data-i18n="s7_g">45–60 min</div></article>
+      <article class="srv rv"><div class="num">08</div><h3 data-i18n="s8_t">Šminkanje</h3><p data-i18n="s8_d">Dnevna, večernja i mladenka — sa pripremom kože, jer šminka stoji onoliko koliko koža dozvoli.</p><div class="tag" data-i18n="s8_g">45–75 min</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- RITUAL -->
+<section class="ritual" id="ritual">
+  <div class="ritual-grid">
+    <div class="ritual-img"><img src="photos/ritual.jpg" alt="Kedrova bačva — fitoterapija"></div>
+    <div class="ritual-body">
+      <div class="sec-label" data-i18n="rit_label">Signature ritual</div>
+      <h2 data-i18n-html="rit_h2">Kedrova bačva —<br><em>30 minuta koje vraćaju tebi</em></h2>
+      <p class="intro" data-i18n="rit_intro">Najtopliji deo našeg studija. Cedrovina i biljna isparenja rade ono što kreme ne mogu: opuštaju mišiće, pokreću limfu i smiruju nervni sistem.</p>
+      <div class="rit-list">
+        <div class="rit-item"><div class="k">01</div><div><h4 data-i18n="rit1_t">Detoks i limfa</h4><p data-i18n="rit1_d">Toplota otvara pore, telo lakše izbacuje višak tečnosti i osećaj težine u nogama.</p></div></div>
+        <div class="rit-item"><div class="k">02</div><div><h4 data-i18n="rit2_t">Mišići i stres</h4><p data-i18n="rit2_d">Cedar, para i tišina. Posle smene, posle treninga, posle svega — telo konačno predahne.</p></div></div>
+        <div class="rit-item"><div class="k">03</div><div><h4 data-i18n="rit3_t">Koža</h4><p data-i18n="rit3_d">Biljne mešavine po tipu kože: za oporavak, za relaksaciju ili za energiju.</p></div></div>
+        <div class="rit-item"><div class="k">04</div><div><h4 data-i18n="rit4_t">Kurs, ne jedan odlazak</h4><p data-i18n="rit4_d">Preporučujemo 8–10 seansi, 1–2 puta nedeljno. Kontraindikacije proveravamo pre prvog ulaska.</p></div></div>
+      </div>
+      <a href="#zakazivanje" class="btn" data-i18n="rit_cta">Zakaži ritual</a>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section id="pogodnosti">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-label rv" data-i18n="off_label">Pogodnosti</div>
+        <h2 class="rv" data-i18n-html="off_h2">Male stvari zbog kojih<br>se <em>vraćaš</em></h2>
+      </div>
+      <p class="rv" data-i18n="off_intro">Nema sitnih slova. Ono što piše — važi, a sve detalje potvrdimo pre nego što sedneš u fotelju.</p>
+    </div>
+    <div class="offer-grid">
+      <article class="offer rv"><div class="pill" data-i18n="off1_p">Poklon</div><h3 data-i18n="off1_t">Poklon vaučer</h3><p data-i18n="off1_d">Rođendan, 8. mart ili „samo zato što“. Vaučer na konkretnu uslugu ili na iznos — sa lepom karticom u koverti.</p><div class="big">01</div></article>
+      <article class="offer rv"><div class="pill" data-i18n="off2_p">Prvi dolazak</div><h3 data-i18n="off2_t">Konsultacija i procena kože</h3><p data-i18n="off2_d">Pre prvog tretmana gledamo kožu, navike i cilj — i kažemo iskreno šta ima smisla, a šta ne. Bez doplate i bez obaveze.</p><div class="big">02</div></article>
+      <article class="offer rv"><div class="pill" data-i18n="off3_p">Serije</div><h3 data-i18n="off3_t">Paketi tretmana</h3><p data-i18n="off3_d">Laserska epilacija i kedrova bačva u paketima od više seansi — povoljnije nego pojedinačno. Uslove dobijaš pri zakazivanju.</p><div class="big">03</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galerija" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-label rv" data-i18n="gal_label">Galerija</div>
+        <h2 class="rv" data-i18n-html="gal_h2">Atmosfera,<br><em>ne katalog</em></h2>
+      </div>
+      <p class="rv" data-i18n="gal_intro">Svetlo, čisto i tiho. Ono što vidiš na slikama — isto je i kad uđeš.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal rv" onclick="openLb('photos/hero.jpg')"><img src="photos/hero.jpg" alt="Enterijer studija Lab Aesthetic" loading="lazy"><span data-i18n="g1">Studio</span></figure>
+      <figure class="gal rv" onclick="openLb('photos/laser.jpg')"><img src="photos/laser.jpg" alt="Tretman lica" loading="lazy"><span data-i18n="g2">Nega lica</span></figure>
+      <figure class="gal rv" onclick="openLb('photos/ritual.jpg')"><img src="photos/ritual.jpg" alt="Kedrova bačva i masaža" loading="lazy"><span data-i18n="g3">Kedrova bačva</span></figure>
+      <figure class="gal rv" onclick="openLb('photos/nails.jpg')"><img src="photos/nails.jpg" alt="Manikir" loading="lazy"><span data-i18n="g4">Manikir</span></figure>
+      <figure class="gal rv" onclick="openLb('photos/mask.jpg')"><img src="photos/mask.jpg" alt="Detalji rituala" loading="lazy"><span data-i18n="g5">Detalji</span></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="utisci">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-label rv" data-i18n="rev_label">Utisci</div>
+        <h2 class="rv" data-i18n-html="rev_h2">Šta kažu<br><em>klijentkinje</em></h2>
+      </div>
+      <p class="rv" data-i18n="rev_intro">Recenzije sa Google profila studija — bez filtera i bez uređivanja.</p>
+    </div>
+    <div class="rev-grid">
+      <article class="rev rv">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="r1">„Divan salon! Veoma pažljivi i profesionalni stilisti. Uradila sam manikir i pedikir — bila sam veoma zadovoljna i toplo ih preporučujem!“</p>
+        <div class="who"><div class="av">A</div><div><b>Anastasija</b><small data-i18n="r1src">Google recenzija</small></div></div>
+      </article>
+      <article class="rev rv">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="r2">„Ovde radim lasersko uklanjanje dlaka — rezultat je vidljiv već posle prvog tretmana, rast dlaka se zaista usporava. Sve se radi pažljivo i profesionalno.“</p>
+        <div class="who"><div class="av">N</div><div><b>Natalija</b><small data-i18n="r2src">Google recenzija</small></div></div>
+      </article>
+      <article class="rev rev-score rv">
+        <div class="big">4,9</div>
+        <div class="out" data-i18n="r3out">od 5 · 28 recenzija</div>
+        <p data-i18n="r3p">Odgovaramo na svaku recenziju — i na one koje nisu savršene. Tako se i popravlja kvalitet.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--paper-2)">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="sec-label rv" data-i18n="faq_label">Najčešća pitanja</div>
+      <h2 class="rv" data-i18n-html="faq_h2">Pitaj pre<br><em>prvog dolaska</em></h2>
+      <p class="rv" style="color:var(--ink-soft);font-weight:300;margin-top:20px;font-size:.94rem" data-i18n="faq_intro">Ako nešto nije ovde — piši na WhatsApp, odgovaramo lično, ne bot.</p>
+      <a href="https://wa.me/381616903331" class="btn btn-ghost rv" style="margin-top:26px" data-i18n="faq_cta">Pitaj na WhatsApp</a>
+    </div>
+    <div class="faq-list rv">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f1_q">Kako da zakažem termin?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f1_a">Najbrže telefonom ili WhatsApp-om na +381 61 690 33 31. Možeš i preko forme na ovoj strani ili porukom na Instagramu — odgovaramo u toku radnog vremena.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f2_q">Koliko tretmana laserske epilacije mi treba?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f2_a">Za trajan rezultat obično 6–10 tretmana, sa pauzom od 4 nedelje. Tačan broj zavisi od zone, tipa dlake i hormona — procenjujemo na prvom dolasku i kažemo realno.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f3_q">Da li laser boli?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f3_a">Diodni laser radi sa hlađenjem, pa većina klijentkinja osećaj opisuje kao toplu gumicu. Osetljive zone (bikini, pazuhe) radimo u mirnijem režimu.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f4_q">Kako da se pripremim pre lasera?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f4_a">Dve nedelje pre: bez sunčanja i solarijuma. Dan pre: obrij zonu. Na tretman dođi bez krema, ulja i dezodoransa. Posle tretmana — SPF 50 svaki dan.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f5_q">Šta je kedrova bačva i kome nije?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f5_a">Fitoterapijsko bure sa toplim biljnim isparenjima. Nije za trudnice, osobe sa visokim pritiskom, akutnim upalama i srčanim oboljenjima — zato pre svakog prvog ulaska proverimo kontraindikacije.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f6_q">Da li govorite ruski?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f6_a">Da. U studiju radimo na srpskom i ruskom — dogovor, nega i preporuke bez prevodioca.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f7_q">Koliko ranije da otkažem termin?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f7_a">Najkasnije 24 sata pre, da to vreme možemo da ponudimo nekome drugome. Ako se nešto promeni u poslednjem trenutku — javi, nađemo novo.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="f8_q">Kako se plaća?</span><span class="ico">+</span></button><div class="faq-a"><p data-i18n="f8_a">Gotovinom ili karticom, na licu mesta posle tretmana. Za pakete i vaučere — po dogovoru pri zakazivanju.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="zakazivanje" class="booking">
+  <div class="wrap book-grid">
+    <div class="book-aside">
+      <div class="sec-label rv" data-i18n="bk_label">Zakazivanje</div>
+      <h2 class="rv" data-i18n-html="bk_h2">Reci kad ti<br><em>odgovara</em></h2>
+      <p class="rv" data-i18n="bk_intro">Pošalji zahtev — javljamo se u toku radnog vremena i potvrđujemo tačan termin. Ako ti je brže, pozovi direktno.</p>
+      <div class="quick rv">
+        <a href="tel:+381616903331"><i>☎</i><span><b>+381 61 690 33 31</b><small data-i18n="bk_call">Pozovi — najbrži način</small></span></a>
+        <a href="https://wa.me/381616903331"><i>✆</i><span><b>WhatsApp</b><small data-i18n="bk_wa">Piši poruku, odgovaramo lično</small></span></a>
+        <a href="https://www.instagram.com/kozmeticki_studio_labestetic" target="_blank" rel="noopener"><i>◎</i><span><b>@kozmeticki_studio_labestetic</b><small data-i18n="bk_ig">DM na Instagramu</small></span></a>
+      </div>
+    </div>
+    <form id="bookForm" novalidate>
+      <div id="formFields">
+        <div class="f-row">
+          <div class="field"><label for="f-name" data-i18n="fm_name">Ime</label><input id="f-name" name="name" type="text" placeholder="Kako da te zovemo" data-i18n-ph="fm_name_ph" autocomplete="name"><span class="err" data-i18n="fm_required">Obavezno polje</span></div>
+          <div class="field"><label for="f-phone" data-i18n="fm_phone">Telefon</label><input id="f-phone" name="phone" type="tel" placeholder="+381 …" autocomplete="tel"><span class="err" data-i18n="fm_required2">Obavezno polje</span></div>
+        </div>
+        <div class="f-row">
+          <div class="field"><label for="f-srv" data-i18n="fm_service">Usluga</label>
+            <select id="f-srv" name="service">
+              <option data-i18n="fm_s0">Izaberi uslugu</option>
+              <option data-i18n="s1_t">Laserska epilacija</option>
+              <option data-i18n="s2_t">Nega i čišćenje lica</option>
+              <option data-i18n="s3_t">Kedrova bačva</option>
+              <option data-i18n="s4_t">Manikir i pedikir</option>
+              <option data-i18n="s5_t">Obrve i trepavice</option>
+              <option data-i18n="s6_t">Depilacija šećerom</option>
+              <option data-i18n="s7_t">Masaže i anticelulit</option>
+              <option data-i18n="s8_t">Šminkanje</option>
+              <option data-i18n="fm_s9">Nisam sigurna — treba mi savet</option>
+            </select><span class="err" data-i18n="fm_required3">Izaberi uslugu</span>
+          </div>
+          <div class="field"><label for="f-date" data-i18n="fm_date">Željeni datum</label><input id="f-date" name="date" type="date"></div>
+        </div>
+        <div class="f-row">
+          <div class="field"><label for="f-time" data-i18n="fm_time">Deo dana</label>
+            <select id="f-time" name="time">
+              <option data-i18n="fm_t1">Bilo kad</option>
+              <option data-i18n="fm_t2">Ujutru (10–13)</option>
+              <option data-i18n="fm_t3">Popodne (13–17)</option>
+              <option data-i18n="fm_t4">Uveče (17–20)</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-lang" data-i18n="fm_lang">Jezik razgovora</label>
+            <select id="f-lang" name="lang">
+              <option>Srpski</option>
+              <option>Русский</option>
+              <option data-i18n="fm_l3">Bilo koji</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="f-note" data-i18n="fm_note">Napomena</label><textarea id="f-note" name="note" placeholder="Prvi dolazak, osetljiva koža, poklon vaučer…" data-i18n-ph="fm_note_ph"></textarea></div>
+        <button type="submit" class="btn btn-accent" data-i18n="fm_submit">Pošalji zahtev</button>
+        <small class="note" data-i18n="fm_note2">Klikom na dugme otvara se WhatsApp sa tvojom porukom — ostaje ti da je pošalješ. Podatke koristimo samo za dogovor termina.</small>
+      </div>
+      <div class="success" id="formOk">
+        <div class="ok">✓</div>
+        <h3 data-i18n="ok_t">Zahtev je spreman</h3>
+        <p data-i18n="ok_p">Otvorili smo WhatsApp sa tvojom porukom — pošalji je i javljamo se u toku radnog vremena. Ako se prozor nije otvorio, pozovi +381 61 690 33 31.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="kontakt">
+  <div class="wrap ct-grid">
+    <div>
+      <div class="sec-label rv" data-i18n="ct_label">Kontakt</div>
+      <h2 class="rv" data-i18n-html="ct_h2">Nalazimo se<br><em>na Grbavici</em></h2>
+      <div class="ct-list rv" style="margin-top:32px">
+        <div><i>◉</i><div><b data-i18n="ct_addr">Adresa</b><span class="v">Kralja Aleksandra 14, Novi Sad<small data-i18n="ct_addr2">Grbavica, blizu Bulevara Mihajla Pupina</small></span></div></div>
+        <div><i>☎</i><div><b data-i18n="ct_phone">Telefon</b><span class="v"><a href="tel:+381616903331">+381 61 690 33 31</a><small data-i18n="ct_phone2">Poziv i WhatsApp</small></span></div></div>
+        <div><i>◷</i><div><b data-i18n="ct_hours">Radno vreme</b><span class="v" data-i18n="ct_hours_v">Pon–ned 10:00–20:00<small>Termin van ovog vremena — po dogovoru</small></span></div></div>
+        <div><i>◎</i><div><b>Instagram</b><span class="v"><a href="https://www.instagram.com/kozmeticki_studio_labestetic" target="_blank" rel="noopener">@kozmeticki_studio_labestetic</a><small data-i18n="ct_ig2">Radovi, akcije i slobodni termini</small></span></div></div>
+      </div>
+    </div>
+    <div class="map rv">
+      <iframe title="Lab Aesthetic — mapa" src="https://maps.google.com/maps?q=Kralja%20Aleksandra%2014%2C%20Novi%20Sad&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="logo" style="margin-bottom:18px"><span class="mark">LA</span> <b>Lab&nbsp;Aesthetic</b></div>
+        <p style="font-size:.88rem;font-weight:300;max-width:320px" data-i18n="ft_about">Kozmetički studio u Novom Sadu. Laserska epilacija, nega lica, kedrova bačva, manikir i obrve — na jednom mestu, bez žurbe.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/kozmeticki_studio_labestetic" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://wa.me/381616903331" aria-label="WhatsApp">WA</a>
+          <a href="tel:+381616903331" aria-label="Telefon">☎</a>
+        </div>
+      </div>
+      <div>
+        <h5 data-i18n="ft_nav">Navigacija</h5>
+        <a href="#usluge" data-i18n="nav_services">Usluge</a>
+        <a href="#ritual" data-i18n="nav_ritual">Kedrova bačva</a>
+        <a href="#pogodnosti" data-i18n="nav_offers">Pogodnosti</a>
+        <a href="#faq" data-i18n="nav_faq">Pitanja</a>
+        <a href="#zakazivanje" data-i18n="nav_book">Zakaži termin</a>
+      </div>
+      <div>
+        <h5 data-i18n="ft_contact">Kontakt</h5>
+        <a href="tel:+381616903331">+381 61 690 33 31</a>
+        <a href="https://maps.google.com/?q=Kralja+Aleksandra+14,+Novi+Sad" target="_blank" rel="noopener">Kralja Aleksandra 14, Novi Sad</a>
+        <a href="https://www.instagram.com/kozmeticki_studio_labestetic" target="_blank" rel="noopener">@kozmeticki_studio_labestetic</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© <span id="yr">2026</span> Lab Aesthetic · Novi Sad</span>
+      <span data-i18n="ft_made">Sajt napravljen sa pažnjom · MAXIMUM</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab" id="fab">
+  <a class="wa" href="https://wa.me/381616903331" aria-label="WhatsApp">✆</a>
+  <a class="tg" href="tel:+381616903331" aria-label="Pozovi">☎</a>
+</div>
+
+<div class="lb" id="lb" onclick="closeLb(event)"><button onclick="closeLb(event,1)">×</button><img id="lbImg" src="" alt=""></div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BeautySalon",
+  "name":"Lab Aesthetic",
+  "alternateName":"Kozmetički studio Lab Aesthetic",
+  "image":"photos/hero.jpg",
+  "telephone":"+381616903331",
+  "address":{"@type":"PostalAddress","streetAddress":"Kralja Aleksandra 14","addressLocality":"Novi Sad","postalCode":"21000","addressCountry":"RS"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"28"},
+  "openingHours":"Mo-Su 10:00-20:00",
+  "sameAs":["https://www.instagram.com/kozmeticki_studio_labestetic"],
+  "priceRange":"$$"
+}
+</script>
+
+<script>
+/* ---------- i18n ---------- */
+const RU = {
+  nav_services:"Услуги", nav_ritual:"Кедровая бочка", nav_offers:"Выгоды", nav_gallery:"Галерея", nav_faq:"Вопросы", nav_contact:"Контакты",
+  nav_book:"Записаться",
+  hero_eyebrow:"Косметологический студий · Нови-Сад",
+  hero_h1:"Уход, который <em>видно.</em><br>И чувствуется.",
+  hero_lead:"Лазерная эпиляция, уход за лицом, кедровая бочка и маникюр — в тихом студии в центре Нови-Сада. Без спешки, по состоянию вашей кожи.",
+  hero_cta:"Записаться", hero_cta2:"Смотреть услуги",
+  trust_rev:"отзыва на Google", trust_addr:"Краља Александра 14", trust_addr2:"Нови-Сад, Грбавица", trust_lang:"Разговор без переводчика",
+  badge_small:"Оценка клиенток на Google",
+  tk1:"Лазерная эпиляция", tk2:"Кедровая бочка", tk3:"Уход за лицом", tk4:"Маникюр и педикюр", tk5:"Ламинирование брови", tk6:"Массажи",
+  srv_label:"Услуги", srv_h2:"Всё в одном месте —<br><em>от лазера до кедра</em>",
+  srv_intro:"Восемь направлений ухода, одна команда и один подход: сначала диагностика, потом процедура. Цены и длительность подтверждаем при записи — без сюрпризов на кассе.",
+  s1_t:"Лазерная эпиляция", s1_d:"Диодный лазер с охлаждением: лицо, подмышки, бикини, ноги, спина. Точно и спокойно, без раздражения.", s1_g:"15–60 мин",
+  s2_t:"Уход и чистка лица", s2_d:"Гидродермабразия, глубокая чистка, мезотерапия и маски — план ухода под ваш тип кожи.", s2_g:"45–75 мин",
+  s3_t:"Кедровая бочка", s3_d:"Фитотерапия в кедровой бочке: тепло, травяные пары и полчаса тишины только для вас.", s3_g:"30–40 мин",
+  s4_t:"Маникюр и педикюр", s4_d:"Гель-лак, наращивание, спа-педикюр и уход за кутикулой. Аккуратно, чисто и надолго.", s4_g:"60–90 мин",
+  s5_t:"Брови и ресницы", s5_d:"Ламинирование, лаш-лифт, коррекция и окрашивание — естественно, но заметно.", s5_g:"45–60 мин",
+  s6_t:"Шугаринг", s6_d:"Сахарная паста для чувствительной кожи — без воска, без ожогов и без красноты.", s6_g:"20–45 мин",
+  s7_t:"Массажи и антицеллюлит", s7_d:"Лимфодренаж, антицеллюлитная программа и массаж спины после долгого дня у экрана.", s7_g:"45–60 мин",
+  s8_t:"Макияж", s8_d:"Дневной, вечерний и для невесты — с подготовкой кожи, потому что макияж держится настолько, насколько позволяет кожа.", s8_g:"45–75 мин",
+  rit_label:"Signature ritual", rit_h2:"Кедровая бочка —<br><em>30 минут, которые возвращают вас вам</em>",
+  rit_intro:"Самая тёплая часть нашего студия. Кедр и травяные пары делают то, чего не могут кремы: расслабляют мышцы, запускают лимфу и успокаивают нервную систему.",
+  rit1_t:"Детокс и лимфа", rit1_d:"Тепло открывает поры, тело легче выводит лишнюю жидкость и тяжесть из ног.",
+  rit2_t:"Мышцы и стресс", rit2_d:"Кедр, пар и тишина. После смены, после тренировки, после всего — тело наконец выдыхает.",
+  rit3_t:"Кожа", rit3_d:"Травяные смеси по типу кожи: для восстановления, для расслабления или для энергии.",
+  rit4_t:"Курс, а не один визит", rit4_d:"Рекомендуем 8–10 сеансов, 1–2 раза в неделю. Противопоказания проверяем до первого входа.",
+  rit_cta:"Записаться на ритуал",
+  off_label:"Выгоды", off_h2:"Мелочи, из-за которых<br>хочется <em>вернуться</em>",
+  off_intro:"Без мелкого шрифта. Что написано — то и действует, а детали подтверждаем до того, как вы сядете в кресло.",
+  off1_p:"Подарок", off1_t:"Подарочный сертификат", off1_d:"День рождения, 8 марта или «просто так». Сертификат на конкретную услугу или на сумму — с красивой открыткой в конверте.",
+  off2_p:"Первый визит", off2_t:"Консультация и диагностика кожи", off2_d:"До первой процедуры смотрим кожу, привычки и цель — и честно говорим, что имеет смысл, а что нет. Без доплаты и без обязательств.",
+  off3_p:"Серии", off3_t:"Пакеты процедур", off3_d:"Лазерная эпиляция и кедровая бочка пакетами из нескольких сеансов — выгоднее, чем по одной. Условия — при записи.",
+  gal_label:"Галерея", gal_h2:"Атмосфера,<br><em>не каталог</em>", gal_intro:"Светло, чисто и тихо. То, что видно на фото — то же и когда заходишь.",
+  g1:"Студий", g2:"Уход за лицом", g3:"Кедровая бочка", g4:"Маникюр", g5:"Детали",
+  rev_label:"Отзывы", rev_h2:"Что говорят<br><em>клиентки</em>", rev_intro:"Отзывы с Google-профиля студия — без фильтров и правок.",
+  r1:"«Прекрасный салон! Очень внимательные и профессиональные мастера. Сделала маникюр и педикюр — осталась очень довольна и горячо рекомендую!»",
+  r2:"«Здесь делаю лазерное удаление волос — результат заметен уже после первой процедуры, рост волос действительно замедляется. Всё делают аккуратно и профессионально.»",
+  r1src:"Отзыв на Google", r2src:"Отзыв на Google", r3out:"из 5 · 28 отзывов",
+  r3p:"Отвечаем на каждый отзыв — в том числе на те, что не идеальны. Так и растёт качество.",
+  faq_label:"Частые вопросы", faq_h2:"Спросите до<br><em>того, как сесть</em>", faq_intro:"Если чего-то нет здесь — напишите в WhatsApp, отвечаем лично, не бот.",
+  faq_cta:"Спросить в WhatsApp",
+  f1_q:"Как записаться?", f1_a:"Быстрее всего — звонком или в WhatsApp на +381 61 690 33 31. Можно через форму на этой странице или сообщением в Instagram — отвечаем в рабочее время.",
+  f2_q:"Сколько процедур лазерной эпиляции нужно?", f2_a:"Для стойкого результата обычно 6–10 процедур с паузой 4 недели. Точное число зависит от зоны, типа волос и гормонов — оцениваем на первом визите и говорим реалистично.",
+  f3_q:"Больно ли делать лазер?", f3_a:"Диодный лазер работает с охлаждением, большинство клиенток описывают ощущение как тёплую резинку. Чувствительные зоны (бикини, подмышки) делаем в более мягком режиме.",
+  f4_q:"Как подготовиться к лазеру?", f4_a:"За две недели: без солнца и солярия. За день: побрить зону. На процедуру прийти без кремов, масел и дезодоранта. После — SPF 50 каждый день.",
+  f5_q:"Что такое кедровая бочка и кому нельзя?", f5_a:"Фитотерапевтическая бочка с тёплыми травяными парами. Нельзя при беременности, высоком давлении, острых воспалениях и болезнях сердца — поэтому перед первым входом проверяем противопоказания.",
+  f6_q:"Говорите ли вы по-русски?", f6_a:"Да. В студии работаем на сербском и русском — договор, уход и рекомендации без переводчика.",
+  f7_q:"За сколько отменять запись?", f7_a:"Не позже чем за 24 часа, чтобы это время можно было предложить другому. Если что-то изменилось в последний момент — напишите, найдём новое.",
+  f8_q:"Как оплатить?", f8_a:"Наличными или картой на месте после процедуры. Пакеты и сертификаты — по договорённости при записи.",
+  bk_label:"Запись", bk_h2:"Скажите, когда<br><em>вам удобно</em>", bk_intro:"Отправьте заявку — свяжемся в рабочее время и подтвердим точное время. Если быстрее — позвоните напрямую.",
+  bk_call:"Позвонить — самый быстрый способ", bk_wa:"Напишите, ответим лично", bk_ig:"Direct в Instagram",
+  fm_name:"Имя", fm_name_ph:"Как к вам обращаться", fm_phone:"Телефон", fm_service:"Услуга", fm_s0:"Выбрать услугу",
+  fm_s9:"Не уверена — нужен совет", fm_date:"Желаемая дата", fm_time:"Время дня",
+  fm_t1:"Любое", fm_t2:"Утром (10–13)", fm_t3:"Днём (13–17)", fm_t4:"Вечером (17–20)",
+  fm_lang:"Язык общения", fm_l3:"Любой", fm_note:"Комментарий", fm_note_ph:"Первый визит, чувствительная кожа, подарочный сертификат…",
+  fm_submit:"Отправить заявку",
+  fm_note2:"По кнопке откроется WhatsApp с вашим текстом — останется отправить. Данные используем только для согласования записи.",
+  fm_required:"Обязательное поле", fm_required2:"Обязательное поле", fm_required3:"Выберите услугу",
+  ok_t:"Заявка готова", ok_p:"Мы открыли WhatsApp с вашим текстом — отправьте его, и мы свяжемся в рабочее время. Если окно не открылось, позвоните +381 61 690 33 31.",
+  ct_label:"Контакты", ct_h2:"Мы находимся<br><em>на Грбавице</em>", ct_addr:"Адрес", ct_addr2:"Грбавица, рядом с бульваром Михайла Пупина",
+  ct_phone:"Телефон", ct_phone2:"Звонок и WhatsApp", ct_hours:"Часы работы", ct_hours_v:"Пн–вс 10:00–20:00<small>Другое время — по договорённости</small>",
+  ct_ig2:"Работы, акции и свободные окна",
+  ft_about:"Косметологический студий в Нови-Саде. Лазерная эпиляция, уход за лицом, кедровая бочка, маникюр и брови — в одном месте, без спешки.",
+  ft_nav:"Навигация", ft_contact:"Контакты", ft_made:"Сделано с вниманием · MAXIMUM"
+};
+const SR = {};
+let LANG = 'sr';
+function collect(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(!(k in SR)) SR[k]=el.innerHTML; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.dataset.i18nHtml; if(!(k in SR)) SR[k]=el.innerHTML; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.dataset.i18nPh; if(!(k in SR)) SR[k]=el.placeholder; });
+}
+function setLang(l){
+  LANG=l;
+  document.documentElement.lang = l==='ru' ? 'ru' : 'sr';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; el.innerHTML = (l==='ru' && RU[k]) ? RU[k] : (SR[k] ?? el.innerHTML); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.dataset.i18nHtml; el.innerHTML = (l==='ru' && RU[k]) ? RU[k] : (SR[k] ?? el.innerHTML); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.dataset.i18nPh; el.placeholder = (l==='ru' && RU[k]) ? RU[k] : (SR[k] ?? el.placeholder); });
+  document.getElementById('btn-sr').classList.toggle('on', l==='sr');
+  document.getElementById('btn-ru').classList.toggle('on', l==='ru');
+  try{ localStorage.setItem('la_lang', l); }catch(e){}
+}
+collect();
+/* ---------- UI ---------- */
+function toggleNav(){ document.getElementById('nav').classList.toggle('open'); }
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  document.getElementById('hd').classList.toggle('solid', y>40);
+  document.getElementById('fab').classList.toggle('show', y>window.innerHeight*0.7);
+});
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el);});
+function toggleFaq(btn){
+  const it=btn.parentElement, a=it.querySelector('.faq-a');
+  document.querySelectorAll('.faq-item.open').forEach(o=>{ if(o!==it){o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null;} });
+  it.classList.toggle('open');
+  a.style.maxHeight = it.classList.contains('open') ? a.scrollHeight+'px' : null;
+}
+function openLb(src){ const lb=document.getElementById('lb'); document.getElementById('lbImg').src=src; lb.classList.add('on'); }
+function closeLb(e,force){ if(force||e.target.id==='lb') document.getElementById('lb').classList.remove('on'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.getElementById('lb').classList.remove('on'); });
+document.getElementById('yr').textContent=new Date().getFullYear();
+try{ const saved=localStorage.getItem('la_lang'); if(saved==='ru') setLang('ru'); }catch(e){}
+/* ---------- form ---------- */
+document.getElementById('bookForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  const form=this, els=form.elements;
+  let ok=true;
+  [['name',''],['phone',''],['service','']].forEach(([n])=>{
+    const input=els[n]; const field=input.closest('.field');
+    if(!input.value.trim() || (n==='service' && input.selectedIndex===0)){ field.classList.add('invalid'); ok=false; }
+    else field.classList.remove('invalid');
+  });
+  if(!ok) return;
+  const rawDate = els['date'].value || '';
+  const dateStr = rawDate ? rawDate.split('-').reverse().join('.') : (LANG==='ru'?'любой день':'bilo koji dan');
+  const msg = (LANG==='ru'?'Здравствуйте! Хочу записаться в Lab Aesthetic.\n':'Zdravo! Želim da zakažem termin u Lab Aesthetic.\n')
+    + (LANG==='ru'?'Имя: ':'Ime: ') + els['name'].value.trim() + '\n'
+    + (LANG==='ru'?'Телефон: ':'Telefon: ') + els['phone'].value.trim() + '\n'
+    + (LANG==='ru'?'Услуга: ':'Usluga: ') + els['service'].selectedOptions[0].textContent + '\n'
+    + (LANG==='ru'?'Дата: ':'Datum: ') + dateStr + '\n'
+    + (LANG==='ru'?'Время: ':'Vreme: ') + els['time'].value + '\n'
+    + (els['note'].value.trim() ? ((LANG==='ru'?'Комментарий: ':'Napomena: ') + els['note'].value.trim() + '\n') : '');
+  window.open('https://wa.me/381616903331?text='+encodeURIComponent(msg),'_blank');
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formOk').classList.add('show');
+});
+</script>
+</body>
+</html>
